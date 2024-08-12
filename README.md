@@ -1,3 +1,13 @@
+    chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
+          tabs.forEach(function (tab) {
+            chrome.tabs.update(tab.id, { autoDiscardable: false });
+          });
+          for (let prop in tabs[0]) {
+            console.log(`${prop}: ${JSON.stringify(tabs[0][prop], null, 2)}`);
+          }
+    });
+
+
 # TabRevivePro Chrome Extension
 
 Revive: Keep inactive tabs alive in Chrome. Preserve pages without refreshing or reloading, boosting productivity.
