@@ -8,6 +8,17 @@
           }
     });
 
+    //can't update "autoDiscardable", only can do to "active" property
+    setTimeout(function(){
+    chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
+          active_tab_id=0;
+          chrome.tabs.query({ active: true}, function(tabs){
+            active_tab_id=tabs[0].id;
+          });
+          chrome.tabs.update(tabs[0].id, { active:true});
+          setTimeout(function(){chrome.tabs.update(active_tab_id, { active:true});}, 1000);
+    });
+    }, 15000);
 
 # TabRevivePro Chrome Extension
 
