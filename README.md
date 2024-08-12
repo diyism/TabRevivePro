@@ -1,5 +1,6 @@
     chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
           tabs.forEach(function (tab) {
+            tab.autoDiscardable=false;
             chrome.tabs.update(tab.id, { autoDiscardable: false });
           });
           for (let prop in tabs[0]) {
