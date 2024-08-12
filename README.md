@@ -9,7 +9,7 @@
     });
 
     //can't update "autoDiscardable", only can do to "active" property
-    setTimeout(function(){
+    setInterval(function(){
     chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
           active_tab_id=0;
           chrome.tabs.query({ active: true}, function(tabs){
