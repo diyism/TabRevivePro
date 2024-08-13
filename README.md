@@ -3,6 +3,8 @@ Download source zip file from: https://github.com/diyism/TabRevivePro_metamask/r
 Click "Extension" on the kiwi browser menu, click "Developer mode" at top-right, click "+(from .zip/.crx/.user.js)", select the zip file and install it
 
 Click "TabRevicePro" on the kiwi browser menu, check the "Active/In Active" box, check the "Keep Metamask Active" box, and click "Save Settings"
+
+The main modification to TabRevivePro:
     
     chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
           tabs.forEach(function (tab) {
