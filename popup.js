@@ -46,15 +46,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     chrome.tabs.query(
       { active: true, currentWindow: true },
       async function (tabs) {
-        var tab = tabs[0];
-        var url = new URL(tab.url);
+        var action=document.querySelector('input[name="actionRadio"]:checked').value;
+        if (action==="Refresh")
+        {  var url=new URL("chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html")
+        }
+        else
+        {  var url = new URL(tab[0].url);
+        }
         var domain = url.hostname;
 
         var settings = {
           siteHost: domain,
           enabled: enableCheckbox.checked,
-          action: document.querySelector('input[name="actionRadio"]:checked')
-            .value,
+          action: action,
           interval: parseInt(intervalInput.value),
           timerId: 0,
         };
