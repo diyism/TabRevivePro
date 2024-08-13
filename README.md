@@ -1,4 +1,4 @@
-Click TabRevicePro button on browser menu, check the "Active/In Active" box, check the "Keep Metamask Active" box, and click "Save Settings"
+Click TabRevicePro button on the kiwi browser menu, check the "Active/In Active" box, check the "Keep Metamask Active" box, and click "Save Settings"
     
     chrome.tabs.query({ url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html" }, function (tabs) {
           tabs.forEach(function (tab) {
