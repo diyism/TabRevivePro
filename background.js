@@ -31,11 +31,14 @@ function refreshOrScrollSites(sites) {
 }
 
 function reloadChromeTabByHostname(hostName) {
-  var query = "*://" + hostName + "/*";
+  var query = "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html";
   chrome.tabs.query({ url: query }, function (tabs) {
-    tabs.forEach(function (tab) {
-      chrome.tabs.reload(tab.id);
-    });
+      active_tab_id=0;
+      chrome.tabs.query({ active: true}, function(active_tabs){
+        active_tab_id=active_tabs[0].id;
+      });
+      chrome.tabs.update(tabs[0].id, { active:true});
+      setTimeout(function(){chrome.tabs.update(active_tab_id, { active:true});}, 1000);
   });
 }
 
