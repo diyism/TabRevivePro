@@ -99,7 +99,7 @@ function saveSettings(settings, callback) {
             target: { tabId: tabs[0].id },
             func: function() {
                 document.querySelector('.chakra-accordion').setAttribute('style', 'width:100%; height:100%; max-width:none;');
-                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://ddoancgleogpbbipcidjkgejakfpjagg/home.html" style="width:100%;height:600px;"/>';
+                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html" style="width:100%;height:600px;"/>';
             }
         });
       }
