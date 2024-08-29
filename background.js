@@ -31,7 +31,7 @@ function refreshOrScrollSites(sites) {
 }
 
 function reloadChromeTabByHostname(hostName) {
-  var query = "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html";
+  var query = "chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html";
   chrome.tabs.query({ url: query }, function (tabs) {
       active_tab_id=0;
       chrome.tabs.query({ active: true}, function(active_tabs){
@@ -50,7 +50,7 @@ function reloadChromeTabByHostname(hostName) {
             target: { tabId: tabs[0].id },
             func: function() {
                 document.querySelector('.chakra-accordion').setAttribute('style', 'width:100%; height:100%; max-width:none;');
-                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://ddoancgleogpbbipcidjkgejakfpjagg/home.html" style="width:100%;height:600px;"/>';
+                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html" style="width:100%;height:600px;"/>';
             }
         });
       }
