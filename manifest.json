@@ -5,7 +5,11 @@
   "description": "Revive: Keep inactive tabs alive in Chrome. Preserve pages without refreshing or reloading, boosting productivity.",
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://swap.defillama.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
