@@ -31,7 +31,7 @@ function refreshOrScrollSites(sites) {
 }
 
 function reloadChromeTabByHostname(hostName) {
-  var query = "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html";
+  var query = "chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html";
   chrome.tabs.query({ url: query }, function (tabs) {
       active_tab_id=0;
       chrome.tabs.query({ active: true}, function(active_tabs){
