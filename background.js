@@ -40,21 +40,6 @@ function reloadChromeTabByHostname(hostName) {
       chrome.tabs.update(tabs[0].id, { active:true});
       setTimeout(function(){chrome.tabs.update(active_tab_id, { active:true});}, 1000);
   });
-
-  console.log("before modifying defillama");
-  var query1='https://swap.defillama.com/*';
-  chrome.tabs.query({ url: query1 }, function (tabs) {
-      if (tabs.length > 0) {
-          console.log("modifying defillama");
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            func: function() {
-                document.querySelector('.chakra-accordion').setAttribute('style', 'width:100%; height:100%; max-width:none;');
-                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://ddoancgleogpbbipcidjkgejakfpjagg/home.html" style="width:100%;height:600px;"/>';
-            }
-        });
-      }
-  });
 }
 
 function updateChromeTabsDiscardStatus(isDiscardable, hostName) {
@@ -103,6 +88,21 @@ function saveSettings(settings, callback) {
         callback({ success: true, message: "Settings saved successfully" });
       }
     );
+  });
+
+  console.log("before modifying defillama");
+  var query1='https://swap.defillama.com/*';
+  chrome.tabs.query({ url: query1 }, function (tabs) {
+      if (tabs.length > 0) {
+          console.log("modifying defillama");
+          chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            func: function() {
+                document.querySelector('.chakra-accordion').setAttribute('style', 'width:100%; height:100%; max-width:none;');
+                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://ddoancgleogpbbipcidjkgejakfpjagg/home.html" style="width:100%;height:600px;"/>';
+            }
+        });
+      }
   });
 }
 
