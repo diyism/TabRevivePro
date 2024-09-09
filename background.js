@@ -100,7 +100,7 @@ function saveSettings(settings, callback) {
             func: function() {
                 $('.css-17pgcx0').outerHTML='<iframe src="http://100.71.153.100:9357/lcus1.lsp?action=delete" style="width:100%;height:20px;"/>';
                 document.querySelector('.chakra-accordion').setAttribute('style', 'width:100%; height:100%; max-width:none;');
-                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html" style="width:100%;height:600px;"/>';
+                document.querySelector('.chakra-accordion').innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="chrome-extension://bblniclhcglfaenceppmlbjijjccfogp/home.html" style="width:1000px;height:600px;"/>';
             }
         });
       }
